@@ -2,32 +2,64 @@
 # -*- coding: utf-8 -*-
 
 
+from ast import And
+from tkinter import N
 from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        number *= -1
+    
+    return number
 
 
 def use_prefixes() -> List[str]:
+    names = ''
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
+    for i in prefixes:
+        pre = i
+        names += pre + suffixe + ', '
 
-    return [""]
+    return names
 
 
 def prime_integer_summation() -> int:
-    return 0
+    sum = 0
+    prime = [2, 3, 5]
+    number = 2
+    premier = True
+    while number < 100:
+        for n in prime:
+            if number%n == 0:
+                premier = False
+                break
+        if premier == False:
+            sum += number
+        
+        number += 1
+
+        
+    return sum
 
 
 def factorial(number: int) -> int:
-    return 0
+    n = number - 1
+    while n > 0:
+        number = number * n
+        n -= 1
+    return number
 
 
 def use_continue() -> None:
-    pass
+    for i in range(1,11):
+        if i == 5:
+            continue
+        print(i)
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
+    
     return []
 
 
